@@ -3,33 +3,34 @@ package rest.resource;
 import java.util.HashMap;
 import java.util.Map;
 
+import rest.error.NeutralValues;
+
 public class Zoo {
+	public String name;
+	public Integer ticket_price;
 	public Map<String, Enclosure> enclosures;
 
 	
 	
-	public Zoo() {
+	public Zoo(String name, Integer ticket_price) {
+		this.name = name;
+		this.ticket_price = ticket_price;
 		this.enclosures = new HashMap<String,Enclosure>();
 	}
 	
-	public Zoo(Map<String, Enclosure> enclosures) {
-		this.enclosures = enclosures;
+	
+	
+	public void put(Enclosure enclosure) {
+		this.enclosures.put(enclosure.id, enclosure);
 	}
 	
-	
-	
-	public void set(String name, Enclosure enclosure) {
-		this.enclosures.put(name, enclosure);
-	}
-	
-	public Enclosure get(String name) {
-		return this.enclosures.get(name);
-	}
-
-	
-	
-	@Override
-	public String toString() {
-		return "Zoo [enclosures=" + enclosures + "]";
+	public Enclosure get(String id) {
+		Enclosure enclosure = this.enclosures.get(id);
+		
+		if (enclosure == null) {
+			enclosure = NeutralValues.ENCLOSURE;
+		}
+		
+		return enclosure;
 	}
 }

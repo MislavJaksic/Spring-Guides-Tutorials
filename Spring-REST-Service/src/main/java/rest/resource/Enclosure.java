@@ -3,33 +3,34 @@ package rest.resource;
 import java.util.HashMap;
 import java.util.Map;
 
+import rest.error.NeutralValues;
+
 public class Enclosure {
+	public String id;
+	public String type;
 	public Map<String, Animal> animals;
 	
 	
 	
-	public Enclosure() {
+	public Enclosure(String id, String type) {
+		this.id = id;
+		this.type = type;
 		this.animals = new HashMap<String,Animal>();
 	}
-
-	public Enclosure(Map<String, Animal> animals) {
-		this.animals = animals;
+	
+	
+	
+	public void put(Animal animal) {
+		this.animals.put(animal.tag, animal);
 	}
 	
-	
-	
-	public void set(String name, Animal animal) {
-		this.animals.put(name, animal);
-	}
-	
-	public Animal get(String name) {
-		return this.animals.get(name);
-	}
-
-	
-	
-	@Override
-	public String toString() {
-		return "Enclosure [animals=" + animals + "]";
+	public Animal get(String tag) {
+		Animal animal = this.animals.get(tag);
+		
+		if (animal == null) {
+			animal = NeutralValues.ANIMAL;
+		}
+		
+		return animal;
 	}
 }

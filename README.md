@@ -1,3 +1,7 @@
+<p align="center">
+  <img width="400" src="images/java.png" alt="Java logo"></a>
+</p>
+
 ## Spring
 
 A popular Java framework.  
