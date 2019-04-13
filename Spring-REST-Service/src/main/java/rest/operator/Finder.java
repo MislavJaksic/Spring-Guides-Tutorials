@@ -5,7 +5,6 @@ import java.util.Collection;
 import java.util.List;
 
 import rest.resource.Animal;
-import rest.resource.Enclosure;
 import rest.resource.Zoo;
 
 public class Finder {
@@ -20,17 +19,6 @@ public class Finder {
 		}
 		
 		return found_zoos;
-	}
-	
-	public static List<Enclosure> findEnclosures(Collection<Enclosure> enclosures, String enclosure_type) {
-		List<Enclosure> found_enclosures = new ArrayList<Enclosure>();
-		for (Enclosure enclosure : enclosures) {
-			if (enclosure.type == enclosure_type) {
-				found_enclosures.add(enclosure);
-			}
-		}
-		
-		return found_enclosures;
 	}
 	
 	public static List<Animal> findAnimals(Collection<Animal> animals, String sex) {
