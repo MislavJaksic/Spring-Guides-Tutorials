@@ -12,7 +12,7 @@ public class ZooData {
 	
 	
 	public static void put(Zoo zoo) {
-		ZooData.zoos.put(zoo.id, zoo);
+		ZooData.zoos.put(zoo.zoo_id, zoo);
 	}
 	
 	public static Zoo get(String id) {

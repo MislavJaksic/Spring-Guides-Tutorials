@@ -11,9 +11,13 @@ public class RelationTypes {
 	public static final String PREVIOUS = Link.REL_PREVIOUS;
 	public static final String SELF =Link. REL_SELF;
 	
-	public static final String HEAD = "head";
-	public static final String GET = "get";
-	public static final String PUT = "put";
-	public static final String POST = "post";
-	public static final String DELETE = "delete";
+	public static final String HEAD = "HEAD";
+	public static final String GET = "GET";
+	public static final String PUT = "PUT";
+	public static final String POST = "POST";
+	public static final String DELETE = "DELETE";
+	
+	public static final String ZOO = "ZOO";
+	public static final String CONTRACT = "CONTRACT";
+	public static final String ANIMAL = "ANIMAL";
 }

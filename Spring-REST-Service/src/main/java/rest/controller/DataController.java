@@ -4,6 +4,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import rest.memory.AnimalData;
+import rest.memory.ContractData;
 import rest.memory.ZooData;
 import rest.resource.Animal;
 import rest.resource.Contract;
@@ -36,5 +37,8 @@ public class DataController {
 		contract_two.add("006");
 		Contract contract_three = new Contract("10F", "New York Zoo");
 		contract_three.add("008");
+		ContractData.put(contract_one);
+		ContractData.put(contract_two);
+		ContractData.put(contract_three);
 	}
 }

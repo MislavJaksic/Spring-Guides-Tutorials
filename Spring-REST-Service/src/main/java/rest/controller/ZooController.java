@@ -1,24 +1,37 @@
 package rest.controller;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import rest.memory.ZooData;
+import rest.representation.ZooRepresentation;
 import rest.resource.Zoo;
 
 @RestController
 public class ZooController {
 	@GetMapping(path="/zoos")
-	public Collection<Zoo> getZoos() {
-	    return ZooData.zoos.values();
+	public List<ZooRepresentation> getZoos() {
+		List<ZooRepresentation> representations = new ArrayList<ZooRepresentation>();
+		Collection<Zoo> zoos = ZooData.zoos.values();
+		for (Zoo zoo : zoos) {
+			ZooRepresentation representation = new ZooRepresentation(zoo);
+			representations.add(representation);
+		}
+		
+	    return representations;
 	}
 	
-	@GetMapping(path="/zoos/{zoo_id}")
-	public Zoo getZoo(@PathVariable String zoo_id) {
-	    return ZooData.get(zoo_id);
+	@GetMapping(path="/zoo/{zoo_id}")
+	public ZooRepresentation getZoo(@PathVariable String zoo_id) {
+		Zoo zoo = ZooData.get(zoo_id);
+		ZooRepresentation representation = new ZooRepresentation(zoo);
+		
+	    return representation;
 	}
 	
 	

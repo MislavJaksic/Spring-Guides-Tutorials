@@ -12,7 +12,7 @@ public class AnimalData {
 	
 
 	public static void put(Animal animal) {
-		AnimalData.animals.put(animal.id, animal);
+		AnimalData.animals.put(animal.animal_id, animal);
 	}
 	
 	public static Animal get(String id) {
