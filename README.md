@@ -1,25 +1,49 @@
 <p align="center">
-  <img width="400" src="images/java.png" alt="Java logo"></a>
+  <img width="400" src="images/spring_simulacrum.png" alt="Spring logo look alike"></a>
 </p>
 
-## Spring
+## [Spring](https://spring.io/)
 
-A popular Java framework.  
+Spring is a free Java framework.  
 
 ### [Spring guides](https://spring.io/guides)
 
-Spring has a lot of guides.  
+Spring has a lot of guides:  
+```
+Building a RESTful Web Service
+Consuming a RESTful Web Service
+Building REST services with Spring
+...
+```
 
 #### Spring REST Service
 
-Demonstrates how to:  
+The project demonstrates how to:  
 ```
 Create a deployable Spring Boot JAR
-Create a REST Controller
-Create an external configuration
+Design a RESTful program
+Create a RESTful controller, resource and representation
+Read external configuration
+Log messages
 ```
+
+### RESTful design
+
+Consult the book [RESTful Web Services](https://github.com/MislavJaksic/Knowledge-Repository/tree/master/REST/Book/RESTFulWebServices).
 
 ### External configuration
 
-Add properties to application.properties in src/main/resources.  
-Inject the properties using a class.  
+Read an external property by:
+```
+Add properties to application.properties in "src/main/resources"
+Inject the properties into a class
+Extract the property value using another class
+```
+
+### Logging
+
+Log messages by:
+```
+Add a file to "src/main/resources"
+Create a logger class
+```

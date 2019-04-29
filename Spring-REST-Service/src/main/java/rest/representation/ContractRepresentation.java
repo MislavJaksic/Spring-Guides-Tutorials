@@ -30,13 +30,13 @@ public class ContractRepresentation extends ResourceSupport {
 	
 	
 	private void addLinks() {
-		this.addGetLink();
+		this.addSelfLink();
 		this.addZooLink();
 		this.addAnimalLinks();
 	}
 	
-	private void addGetLink() {
-		this.add(linkTo(methodOn(ContractController.class).getContract(this.zoo_id, this.contract_id)).withRel(RelationTypes.GET));
+	private void addSelfLink() {
+		this.add(linkTo(methodOn(ContractController.class).getContract(this.zoo_id, this.contract_id)).withRel(RelationTypes.SELF));
 	}
 	
 	private void addZooLink() {

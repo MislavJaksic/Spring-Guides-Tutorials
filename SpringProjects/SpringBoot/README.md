@@ -1,12 +1,17 @@
-## Spring Boot
+## [Spring Boot](https://spring.io/projects/spring-boot)
 
-### [Annotations](https://docs.spring.io/spring-boot/docs/current/api/)
+* [Javadoc](https://docs.spring.io/spring-boot/docs/current/api/)  
+* [Reference manual](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/)  
+
+### Annotations
 
 ```
-@Componenet -> autodetected classes
-@Configuration -> class declares at least one @Bean method
-@SpringBootConfiguration -> unique; provides Spring Boot config
-@EnableAutoConfiguration -> guess @Configuration values
-@ComponentScan -> scans the whole package for @Component
 @SpringBootApplication -> @SpringBootConfiguration, @EnableAutoConfiguration and @ComponentScan
+
+@SpringBootConfiguration -> unique; provides Spring Boot config
+@EnableAutoConfiguration -> guesses scanned class @Configuration value
+@ComponentScan -> scans packages beneath the class for @Component
+
+@Component -> autodetected class
+@Configuration -> class declares at least one @Bean method
 ```

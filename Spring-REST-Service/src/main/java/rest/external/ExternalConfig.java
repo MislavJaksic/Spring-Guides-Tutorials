@@ -5,6 +5,9 @@ import javax.validation.constraints.NotNull;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.validation.annotation.Validated;
 
+/**
+ * Responsible for reading application.properties values.
+ */
 @ConfigurationProperties(prefix="app")
 @Validated
 public class ExternalConfig {

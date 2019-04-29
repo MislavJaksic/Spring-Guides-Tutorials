@@ -29,12 +29,12 @@ public class AnimalRepresentation extends ResourceSupport {
 	
 	
 	private void addLinks() {
-		this.addGetLink();
+		this.addSelfLink();
 		this.addContractLink();
 	}
 	
-	private void addGetLink() {
-		this.add(linkTo(methodOn(AnimalController.class).getAnimal(this.animal_id)).withRel(RelationTypes.GET));
+	private void addSelfLink() {
+		this.add(linkTo(methodOn(AnimalController.class).getAnimal(this.animal_id)).withRel(RelationTypes.SELF));
 	}
 	
 	private void addContractLink() {
